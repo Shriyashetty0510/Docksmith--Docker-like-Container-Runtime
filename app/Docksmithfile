@@ -1,0 +1,9 @@
+FROM base
+WORKDIR /app
+COPY . /app
+COPY ~/base_image/bin /bin
+COPY ~/base_image/lib /lib
+COPY ~/base_image/lib64 /lib64
+ENV NAME=VIEWERS 
+RUN /bin/echo "Build Done"
+CMD ["python", "/app/main.py"]
